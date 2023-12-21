@@ -18,6 +18,7 @@ install.packages(c('Rdpack', 'parallel', 'deSolve', 'pspline', 'stringi'), depen
 ```
 
 Download the files ``BSEIR_0.1.0.tar.gz`` and ``wavefinder_0.1.0.tar.gz`` from the directory ``Rsource`` of this repository.
+
 Run the following line with ``~`` replaced by the path to the directory where ``BSEIR_0.1.0.tar.gz`` and ``wavefinder_0.1.0.tar.gz`` were saved at on your computer.
 
 ``` r
