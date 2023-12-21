@@ -4,7 +4,7 @@ This repository provides supplementary material to the paper ``Heterogeneous ris
 from the project ``Standards of Risk Evidence Driven Behavior-Disease Model``. The directory ``Files2023Sections`` contains discussions from early stages of the project. It is not intended to the public.
 
 The directory ``Rsource`` contains two source R packages required to reproduce the results in the paper: ``BSEIR`` and ``wavefinder``.
-These packages require R (>= 4.0.0). To install all dependencies:
+These packages require R (>= 4.0.0) and depend on a few other R packages. To install all dependencies:
 
 ``` r
 # Install devtools if not yet
@@ -17,11 +17,12 @@ install.packages(c('Rdpack', 'R6', 'dplyr', 'pracma', 'data.table'), dependencie
 install.packages(c('Rdpack', 'parallel', 'deSolve', 'pspline', 'stringi'), dependencies = TRUE)
 ```
 
-Download the files ``BSEIR_0.1.0.tar.gz`` and ``wavefinder_0.1.0.tar.gz`` from the directory ``Rsource`` of this repository.
+To install ``BSEIR`` and ``wavefinder`` on your computer, first download the files ``BSEIR_0.1.0.tar.gz`` and ``wavefinder_0.1.0.tar.gz`` from the directory ``Rsource`` of this repository.
 
-Run the following line with ``~`` replaced by the path to the directory where ``BSEIR_0.1.0.tar.gz`` and ``wavefinder_0.1.0.tar.gz`` were saved at on your computer.
+Then, run the following line with ``~`` replaced by the path to the directory where ``BSEIR_0.1.0.tar.gz`` and ``wavefinder_0.1.0.tar.gz`` were saved on your computer.
 
 ``` r
+# Install the required libraries BSEIR and wavefinder
 install.packages("~/wavefinder_0.1.0.tar.gz", repos = NULL, type = "source")
 install.packages("~/BSEIR_0.1.0.tar.gz", repos = NULL, type = "source")
 ```
@@ -109,5 +110,5 @@ peaktroughs
 ## Reference
 Harvey J, Chan B, Srivastava T, Zarebski AE, Dłotko P, Błaszczyk P, Parkinson RH, White LJ, Aguas R, Mahdi A (2023). “Epidemiological waves - Types, drivers and modulators in the COVID-19 pandemic.” Heliyon, 1–25. doi:10.1016/j.heliyon.2023.e16015.
 
-The directory ``RunScenarios`` contains R codes used to run simulations in the indexed paper.
+The directory ``RunScenarios`` contains R codes (and generated ``.csv`` files) used to run simulations in the paper ``Heterogeneous risk tolerance, in-groups, and epidemic waves``. A file with the generic name ``GenerateScenariosX`` (e.g. ``GenerateScenarios0``) generates combinations of BSEIR model parameters for simulations under a specific population profile (e.g. ``profile 0``, i.e. a population responsive to disease prevalence only).
 
