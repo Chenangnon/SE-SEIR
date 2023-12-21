@@ -110,6 +110,8 @@ peaktroughs
 ## Reference
 Harvey J, Chan B, Srivastava T, Zarebski AE, Dłotko P, Błaszczyk P, Parkinson RH, White LJ, Aguas R, Mahdi A (2023). “Epidemiological waves - Types, drivers and modulators in the COVID-19 pandemic.” Heliyon, 1–25. doi:10.1016/j.heliyon.2023.e16015.
 
+## Sample codes
+
 ## Simulation procedure
 The directory ``RunScenarios`` contains R codes (and generated ``.csv`` files) used to run simulations in the paper ``Heterogeneous risk tolerance, in-groups, and epidemic waves``. A file with the generic name ``GenerateScenariosX.R`` (e.g. ``GenerateScenarios0.R``) contains the R code used to generate combinations of BSEIR model parameters for simulations under a specific population profile (e.g. ``profile 0`` in the paper, i.e. a population responsive to disease prevalence only). It uses the R function ``BSEIR::get.sim.scenarios`` of the package ``BSEIR``: see the R help page ``?BSEIR::get.sim.scenarios`` for details. The results from running ``GenerateScenariosX.R`` is an R object of class ``sim.scenarios``, i.e. a ``data.frame`` with 25 named columns which is saved in the file ``ScenariosX.csv`` (e.g. ``Scenarios0.csv``). The R script ``RunScenariosX.R`` (e.g. ``RunScenarios0.R``) loads ``ScenariosX.csv`` (e.g. ``Scenarios0.csv``) and calls the function ``BSEIR::Batch.solveBSEIR`` of the package ``BSEIR`` to run the simulations for all scenarios indexed in ``ScenariosX.csv``.
 
