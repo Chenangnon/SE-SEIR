@@ -4,18 +4,22 @@ This repository provides supplementary material to the paper ``Heterogeneous ris
 from the project ``Standards of Risk Evidence Driven Behavior-Disease Model``.
 
 The folder ``Rsource`` contains two source packages required to reproduce the results in the paper: ``BSEIR`` and ``wavefinder``.
-Please, install all dependencies in R with the code
+These packages require R (>= 4.0.0). To install all dependencies:
 
 ``` r
-# Install devtools
-install.packages("devtools")
+# Install devtools if not yet
+if(!require("devtools")) install.packages("devtools")
 
-# Dependencies for wavefinder
+# Install dependencies for wavefinder
 install.packages(c('Rdpack', 'R6', 'dplyr', 'pracma', 'data.table'), dependencies = TRUE)
 
-# Additional dependencies for BSEIR (also depend on 'pracma', 'data.table', 'wavefinder')
+# Install additional dependencies for BSEIR (also depends on 'pracma', 'data.table', and 'wavefinder')
 install.packages(c('Rdpack', 'parallel', 'deSolve', 'pspline', 'stringi'), dependencies = TRUE)
 ```
 
-Download and install these 
+Download the files ``BSEIR_0.1.0.tar.gz`` and ``wavefinder_0.1.0.tar.gz`` from the directory ``Rsource``.
+
+``` r
+install.packages("~/wavefinder_0.1.0.tar.gz", repos = NULL, type = "source")
+```
 
