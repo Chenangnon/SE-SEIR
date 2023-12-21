@@ -3,7 +3,9 @@
 This repository provides supplementary material to the paper ``Heterogeneous risk tolerance, in-groups, and epidemic waves``
 from the project ``Standards of Risk Evidence Driven Behavior-Disease Model``.
 
-The folder ``Rsource`` contains two source R packages required to reproduce the results in the paper: ``BSEIR`` and ``wavefinder``.
+The directory ``Files2023Sections`` contains discussion on the early stage of the ``Standards of Risk Evidence Driven Behavior-Disease Model`` project. It is not intended to the public.
+
+The directory ``Rsource`` contains two source R packages required to reproduce the results in the paper: ``BSEIR`` and ``wavefinder``.
 These packages require R (>= 4.0.0). To install all dependencies:
 
 ``` r
