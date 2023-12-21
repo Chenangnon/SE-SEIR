@@ -26,8 +26,8 @@ install.packages("~/wavefinder_0.1.0.tar.gz", repos = NULL, type = "source")
 install.packages("~/BSEIR_0.1.0.tar.gz", repos = NULL, type = "source")
 ```
 
-## Example
-This is a basic example which shows you how to simulate a Behavior-Disease system.
+## Example 1
+This basic example shows you how to simulate and visualize a Behavior-Disease system.
 
 ``` r
 ## Simulation of an homogeneous population reactive to prevalence only, with neutral in-group pressure, and 95% protection by prophylactic behavior.
@@ -61,6 +61,9 @@ params0 <- list (
 ## Load BSEIR
 library(BSEIR)
 
+## Help on the main function
+?SolveBSEIR
+
 ## Run the simulation
 sim0 <- SolveBSEIR (params = params0$params,
                     y0 = params0$y0,
@@ -77,3 +80,31 @@ plot(sim0, which = "Prophylactic proportions")
 plot(sim0, which = "Reproductive numbers")
 ```
 
+## Example 2
+This example shows an approach to wave detection in an epidemiological time series using Harvey et al. (2023)'s algorithm.
+The example use a simulated epidemiological case data with spikes.  
+
+``` r
+## Load wavefinder
+library(wavefinder)
+
+## Load data (see ?sbseir for details)
+load('sbseir')
+
+# Plot the same series repeated twice
+plot(c(sbseir$Time, tail(sbseir$Time, 1) + sbseir$Time[-1]),
+     c(sbseir$Ct, sbseir$Ct[-1]),
+     type="l", col="navy",
+     xlab = "Time (day)", ylab = "New positive cases")
+grid()
+
+# Find peaks with height over 100, and trough below 500, and peak-trough distance above 10 steps
+peaktroughs <- peaks_and_troughs (c(sbseir$Ct, sbseir$Ct[-1]),
+                                  height = 100,
+                                  trough_max = 500,
+                                  lag_min = 10)
+peaktroughs
+```
+
+## Reference
+Harvey J, Chan B, Srivastava T, Zarebski AE, Dłotko P, Błaszczyk P, Parkinson RH, White LJ, Aguas R, Mahdi A (2023). “Epidemiological waves - Types, drivers and modulators in the COVID-19 pandemic.” Heliyon, 1–25. doi:10.1016/j.heliyon.2023.e16015.
