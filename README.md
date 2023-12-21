@@ -1,9 +1,7 @@
 # SE-SEIR
 
 This repository provides supplementary material to the paper ``Heterogeneous risk tolerance, in-groups, and epidemic waves``
-from the project ``Standards of Risk Evidence Driven Behavior-Disease Model``.
-
-The directory ``Files2023Sections`` contains discussion on the early stage of the ``Standards of Risk Evidence Driven Behavior-Disease Model`` project. It is not intended to the public.
+from the project ``Standards of Risk Evidence Driven Behavior-Disease Model``. The directory ``Files2023Sections`` contains discussion on the early stage of the project. It is not intended to the public.
 
 The directory ``Rsource`` contains two source R packages required to reproduce the results in the paper: ``BSEIR`` and ``wavefinder``.
 These packages require R (>= 4.0.0). To install all dependencies:
@@ -110,3 +108,6 @@ peaktroughs
 
 ## Reference
 Harvey J, Chan B, Srivastava T, Zarebski AE, Dłotko P, Błaszczyk P, Parkinson RH, White LJ, Aguas R, Mahdi A (2023). “Epidemiological waves - Types, drivers and modulators in the COVID-19 pandemic.” Heliyon, 1–25. doi:10.1016/j.heliyon.2023.e16015.
+
+The directory ``RunScenarios`` contains R codes used to run simulations in the indexed paper.
+
