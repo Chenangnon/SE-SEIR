@@ -44,7 +44,7 @@ params0 <- list (
              alpha1 = 1, alpha2 = 1,  # In-group pressure (neutral)
              m01 = 0.05, m02 = 0.05,  # Prophylactic proportion in disease/info-free conditions
              kappa = 0.95,            # level of protection from prophylactic behavior
-             beta_0 = 2,              # Baseline (disease/info-free) transmission rate
+             beta_0 = 0.5,              # Baseline (disease/info-free) transmission rate
              phi_a = 1, phi_s = 1,    # Probability of disease transmission by asymptomatic/syptomatic infectives
              theta = 1/4,             # 1/Duration of incubation (latent) period
              pi_val = 2/3,            # Early detection probability for exposed individuals
@@ -90,7 +90,7 @@ The example use a simulated epidemiological case data with spikes.
 library(wavefinder)
 
 ## Load data (see ?sbseir for details)
-load('sbseir')
+data('sbseir')
 
 # Plot the same series repeated twice
 plot(c(sbseir$Time, tail(sbseir$Time, 1) + sbseir$Time[-1]),
