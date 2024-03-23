@@ -83,7 +83,7 @@ plot(sim0, which = "Reproductive numbers")
 
 ## Example 2
 This example shows an approach to wave detection in an epidemiological time series using Harvey et al. (2023)'s algorithm.
-The example use a simulated epidemiological case data with spikes.  
+The example uses a simulated epidemiological case data with spikes.  
 
 ``` r
 ## Load wavefinder
