@@ -113,7 +113,7 @@ The directory ``RunScenarios`` contains R codes (and generated ``.csv`` files) u
 No stability analysis is provided in the paper ``Heterogeneous risk tolerance, in-groups, and epidemic waves`` because such analysis was beyond the scope of the conceptual analysis presented. For the interested reader, however, we provide in the file ``frontiers_Stability_Analysis.pdf`` (in the directory ``Stability``) a draft on stability analysis that was finally not submitted with the paper (hence the content of this stability analysis was not peer reviewed).
 
 
-## Reference
+## References
 Tovissodé CF, Baumgaertner B (2024). Heterogeneous risk tolerance, in-groups, and epidemic waves.
 Front. Appl. Math. Stat. 10:1360001, 1-18. doi: 10.3389/fams.2024.1360001
 
