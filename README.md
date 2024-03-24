@@ -1,7 +1,6 @@
 # SE-SEIR
 
-This repository provides supplementary material to the paper ``Heterogeneous risk tolerance, in-groups, and epidemic waves``
-from the project ``Standards of Risk Evidence Driven Behavior-Disease Model``. The directory ``Files2023Sections`` contains discussions from early stages of the project. It is not intended to the public.
+This repository provides supplementary material to the paper ``Heterogeneous risk tolerance, in-groups, and epidemic waves`` (Tovissodé et al., 2024) from the project ``Standards of Risk Evidence Driven Behavior-Disease Model``. The directory ``Files2023Sections`` contains discussions from early stages of the project. It is not intended to the public.
 
 The directory ``Rsource`` contains two source R packages required to reproduce the results in the paper: ``BSEIR`` and ``wavefinder``.
 These packages require R (>= 4.0.0) and depend on a few other R packages. To install all dependencies:
@@ -107,11 +106,18 @@ peaktroughs <- peaks_and_troughs (c(sbseir$Ct, sbseir$Ct[-1]),
 peaktroughs
 ```
 
-## Reference
-Harvey J, Chan B, Srivastava T, Zarebski AE, Dłotko P, Błaszczyk P, Parkinson RH, White LJ, Aguas R, Mahdi A (2023). “Epidemiological waves - Types, drivers and modulators in the COVID-19 pandemic.” Heliyon, 1–25. doi:10.1016/j.heliyon.2023.e16015.
-
 ## Simulation procedure
 The directory ``RunScenarios`` contains R codes (and generated ``.csv`` files) used to run simulations in the paper ``Heterogeneous risk tolerance, in-groups, and epidemic waves``. A file with the generic name ``GenerateScenariosX.R`` (e.g. ``GenerateScenarios0.R``) contains the R code used to generate combinations of BSEIR model parameters for simulations under a specific population profile (e.g. ``profile 0`` in the paper, i.e. a population responsive to disease prevalence only). It uses the R function ``BSEIR::get.sim.scenarios`` of the package ``BSEIR`` (see the R help page ``?BSEIR::get.sim.scenarios`` for details). The results from running ``GenerateScenariosX.R`` is an R object of class ``sim.scenarios``, i.e. a ``data.frame`` with 25 named columns which is saved in the file ``ScenariosX.csv`` (e.g. ``Scenarios0.csv``). The R script ``RunScenariosX.R`` (e.g. ``RunScenarios0.R``) loads ``ScenariosX.csv`` (e.g. ``Scenarios0.csv``) and calls the function ``BSEIR::Batch.solveBSEIR`` of the package ``BSEIR`` to run the simulations for all scenarios indexed in ``ScenariosX.csv`` (see the R help page ``?BSEIR::Batch.solveBSEIR`` for details).
+
+## Stability analysis
+No stability analysis is provided in the paper ``Heterogeneous risk tolerance, in-groups, and epidemic waves`` because such analysis was beyond the conceptual analysis presented, and the model is not realistic enough for a stability analysis to be useful. For the interested reader, however, we provide in the file ``frontiers_Stability_Analysis.pdf`` a draft on stability analysis that was finaly not submitted with the paper (hence the content of this stability analysis was not peer reviewed).
+
+
+## Reference
+Tovissodé CF, Baumgaertner B (2024). Heterogeneous risk tolerance, in-groups, and epidemic waves.
+Front. Appl. Math. Stat. 10:1360001, 1-18. doi: 10.3389/fams.2024.1360001
+
+Harvey J, Chan B, Srivastava T, Zarebski AE, Dłotko P, Błaszczyk P, Parkinson RH, White LJ, Aguas R, Mahdi A (2023). “Epidemiological waves - Types, drivers and modulators in the COVID-19 pandemic.” Heliyon, 1–25. doi:10.1016/j.heliyon.2023.e16015.
 
 
 
